@@ -4,6 +4,7 @@ export default function Letras(props) {
     const selectedWord = props.selectedWord
     const getRandomWord = props.getRandomWord
     const setSelectedWord = props.setSelectedWord
+    const disabled = props.disabled
     const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
     return (
@@ -13,6 +14,8 @@ export default function Letras(props) {
                 selectedWord={selectedWord}
                 getRandomWord={getRandomWord}
                 setSelectedWord={setSelectedWord}
+                disabled={disabled}
+                
             />)}
         </div>
     )
@@ -20,25 +23,12 @@ export default function Letras(props) {
 
 
 function Letter(props) {
-
-
-    const randomWord = Array.from(props.selectedWord)
-    function checkLetter() {
-        console.log(randomWord)
-      
-
-
-        for (let i = 0; i < randomWord.length; i++) {
-            if (randomWord[i] === props.letter) {
-               props.setSelectedWord(randomWord.map((item) =>item.replace(randomWord[i], " _ ")))
-            }
-
-        }
-    }
-
+    console.log(props.disabled)
+    //const randomWord = Array.from(props.selectedWord)
+    //console.log(randomWord)
     return (
         <ul>
-            <li onClick={checkLetter} className={props.keyboard}>{(props.letter).toUpperCase()}</li>
+            { <li disabled = {props.disabled}  className={props.keyboard}>{(props.letter).toUpperCase()}</li> }
         </ul>
 
     )

@@ -12,7 +12,8 @@ function App() {
   const [selectedWord, setSelectedWord] = useState(getRandomWord())
   const [keyboard, setKeyboard] = useState('letter')
   const [pickedWord, setPickedWord] = useState('word hidden')
-  const [star, setStart] = useState(false)
+  const [disabled, setDisabled] = useState(true)
+
 
 
 
@@ -26,14 +27,21 @@ function App() {
         setKeyboard={setKeyboard}
         pickedWord={pickedWord}
         setPickedWord={setPickedWord}
+        disabled={disabled}
+        setDisabled={setDisabled}
       />
       <Letras keyboard={keyboard}
         setKeyboard={setKeyboard}
         selectedWord={selectedWord}
         setSelectedWord={setSelectedWord}
         getRandomWord={getRandomWord}
+        disabled={disabled}
+        setDisabled={setDisabled}
       />
-      <Chute />
+      <Chute
+        disabled={disabled}
+        setDisabled={setDisabled}
+      />
     </div>
   );
 }
