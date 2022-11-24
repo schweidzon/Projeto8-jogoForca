@@ -6,28 +6,17 @@ export default function Jogo(props) {
    
     
    
-    // function changeWord() {
-    //     let arr = []
-    //     for(let i = 0; i < selectedWord.length; i++) {
-    //         arr.push(" _ ")
-    //     }
-    //     console.log(arr)
-    //     return arr
-    // }
+
   
 
     function selectWord() {        
-       //props.setUnderLine(changeWord())
+     
        console.log(props.underLine)
        const under = selectedWord.map((letra) => letra.replace(letra, " _ "))
-        
-        
         props.setUnderLine(under)
-        //console.log(underL)
-       
-        
         props.setPickedWord('word')
         props.setKeyboard('letter active')
+        props.setStartGame(true)
        
     }
 

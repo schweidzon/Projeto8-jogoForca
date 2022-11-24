@@ -7,9 +7,10 @@ export default function Letras(props) {
     const disabled = props.disabled
     const clickedLetters = [...props.clickedLetters]
     const setClickedLetters = props.setClickedLetters
-
     const underLine = [...props.underLine]
     const setUnderLine = props.setUnderLine
+    const startGame = props.startGame
+    const setStartGame = props.setStartGame
 
 
     const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
@@ -27,6 +28,9 @@ export default function Letras(props) {
                 underLine={underLine}
                 setUnderLine={setUnderLine}
                 setClickedLetters={setClickedLetters}
+                startGame={startGame}
+                setStartGame={setStartGame}
+                
             />)}
         </div>
     )
@@ -41,6 +45,7 @@ function Letter(props) {
         const disabeLetters = [...props.clickedLetters, letter]
         props.setClickedLetters(disabeLetters)
         console.log(disabeLetters)
+
         //Iterar no array da palavra e verificar
         // se a letra do array selectedWord === letra clicada
         // faz váriavel chamada mostrar e iguala ela ao que ta sendo mostrado na tela (no caso seria os underlines). Depois, diz que mostrar no indice que as letras coincidiram é igual a letra, e depois seta o underLine pra mostrar essa variavel "mostrar"
@@ -77,7 +82,7 @@ function Letter(props) {
     return (
         <ul>
             <li >
-            <button disabled={props.clickedLetters.includes(props.letter) ? true : false} onClick={() => clique(props.letter)} className={props.keyboard}>{(props.letter).toUpperCase()}</button>
+            <button disabled={props.clickedLetters.includes(props.letter) ? true : false} onClick={() => clique(props.letter)} className={`letter ${props.startGame ? "active" : "" } ${props.clickedLetters.includes(props.letter) ? "desactive" :""}`}>{(props.letter).toUpperCase()}</button>
             </li>
         </ul>
 

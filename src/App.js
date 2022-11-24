@@ -15,6 +15,7 @@ function App() {
   const [pickedWord, setPickedWord] = useState('word hidden')
   const [disabled, setDisabled] = useState(true)
   const [clickedLetters, setClickedLetters] = useState([])
+  const [startGame, setStartGame] = useState(false)
   
   
 
@@ -37,6 +38,8 @@ function App() {
         setClickedLetters={setClickedLetters}
         underLine={underLine}
         setUnderLine={setUnderLine}
+        startGame={startGame}
+        setStartGame={setStartGame}
       />
       <Letras keyboard={keyboard}
         setKeyboard={setKeyboard}
@@ -47,9 +50,10 @@ function App() {
         setDisabled={setDisabled}
         clickedLetters={clickedLetters}
         setClickedLetters={setClickedLetters}
-        
         underLine={underLine}
         setUnderLine={setUnderLine}
+        startGame={startGame}
+        setStartGame={setStartGame}
       />
       <Chute
         disabled={disabled}
