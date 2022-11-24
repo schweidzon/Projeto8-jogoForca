@@ -58,12 +58,13 @@ function Letter(props) {
         //seta o mostrar para (_, a, _, a) e compara se a letra clicada tem na palavra selectedWord (o V tem no indice 0)
         //pega o mostrar no indice que a letra coindiciu (0) e muda para a letra
         //mostrar agora é (v, a, _, a) => seta o underline pra mostrar na tela.
-        selectedWord.map((l, i) => {
+        selectedWord.forEach((l, i) => { 
             if (l === letter) {
                 let mostrar = props.underLine
                 mostrar[i] = letter
                 props.setUnderLine(mostrar)
             }
+            
 
         })
 
