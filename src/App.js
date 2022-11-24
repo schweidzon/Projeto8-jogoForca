@@ -10,9 +10,13 @@ function App() {
     return palavras[Math.floor(Math.random() * (palavras).length)]
   }
   const [selectedWord, setSelectedWord] = useState(getRandomWord())
+  const [underLine, setUnderLine] = useState([])
   const [keyboard, setKeyboard] = useState('letter')
   const [pickedWord, setPickedWord] = useState('word hidden')
   const [disabled, setDisabled] = useState(true)
+  const [clickedLetters, setClickedLetters] = useState([])
+  
+  
 
 
 
@@ -29,6 +33,10 @@ function App() {
         setPickedWord={setPickedWord}
         disabled={disabled}
         setDisabled={setDisabled}
+        clickedLetters={clickedLetters}
+        setClickedLetters={setClickedLetters}
+        underLine={underLine}
+        setUnderLine={setUnderLine}
       />
       <Letras keyboard={keyboard}
         setKeyboard={setKeyboard}
@@ -37,6 +45,11 @@ function App() {
         getRandomWord={getRandomWord}
         disabled={disabled}
         setDisabled={setDisabled}
+        clickedLetters={clickedLetters}
+        setClickedLetters={setClickedLetters}
+        
+        underLine={underLine}
+        setUnderLine={setUnderLine}
       />
       <Chute
         disabled={disabled}
