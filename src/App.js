@@ -1,8 +1,7 @@
 import { useState } from "react";
 import Chute from "./components/Chute";
 import Jogo from "./components/Jogo"
-//import Letras from "./components/Letras";
-import Letras2 from "./components/Letras2"
+import Letras from "./components/Letras"
 import palavras from "./palavras"
 
 function App() {
@@ -14,12 +13,15 @@ function App() {
   const [underLine, setUnderLine] = useState([])
   const [keyboard, setKeyboard] = useState('letter')
   const [pickedWord, setPickedWord] = useState('word hidden')
-  const [disabled, setDisabled] = useState(true)
+  
   const [clickedLetters, setClickedLetters] = useState([])
   const [startGame, setStartGame] = useState(false)
+
   const [hangImage, setHangImage] = useState("assets/forca0.png")
   const [wrongPlays, setWrongPlays] = useState(0)
   const [win, setWin] = useState(false)
+  const [chute, setChute] = useState("")
+  
   console.log(hangImage)
 
   return (
@@ -31,8 +33,7 @@ function App() {
         setKeyboard={setKeyboard}
         pickedWord={pickedWord}
         setPickedWord={setPickedWord}
-        disabled={disabled}
-        setDisabled={setDisabled}
+       
         clickedLetters={clickedLetters}
         setClickedLetters={setClickedLetters}
         underLine={underLine}
@@ -45,14 +46,13 @@ function App() {
         setWrongPlays={setWrongPlays}
         win={win}
         setWin={setWin}
+        
       />
-      <Letras2 keyboard={keyboard}
+      <Letras keyboard={keyboard}
         setKeyboard={setKeyboard}
         selectedWord={selectedWord}
         setSelectedWord={setSelectedWord}
         getRandomWord={getRandomWord}
-        disabled={disabled}
-        setDisabled={setDisabled}
         clickedLetters={clickedLetters}
         setClickedLetters={setClickedLetters}
         underLine={underLine}
@@ -65,12 +65,26 @@ function App() {
         setWrongPlays={setWrongPlays}
         win={win}
         setWin={setWin}
+        
         />
       <Chute
-        disabled={disabled}
-        setDisabled={setDisabled}
+       
         startGame={startGame}
         setStartGame={setStartGame}
+        selectedWord={selectedWord}
+        setSelectedWord={setSelectedWord}
+        win={win}
+        setWin={setWin}
+        underLine={underLine}
+        setUnderLine={setUnderLine}
+        getRandomWord={getRandomWord}
+        hangImage={hangImage}
+        setHangImage={setHangImage}
+        
+       
+        chute={chute}
+        setChute={setChute}
+        
       />
     </div>
   );
