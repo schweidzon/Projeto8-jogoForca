@@ -1,3 +1,6 @@
+import forca0 from "../assets/images/forca0.png"
+import forca6 from "../assets/images/forca6.png"
+
 export default function Jogo({ selectedWord, setSelectedWord, setClickedLetters, hangImage, setHangImage, pickedWord, setPickedWord, startGame, setStartGame, underLine, setUnderLine, win, setWin, wrongPlays, setWrongPlays, setKeyboard, answer, setAnswer, getRandomWord }) {
     console.log(selectedWord)
     function selectWord() {
@@ -9,7 +12,7 @@ export default function Jogo({ selectedWord, setSelectedWord, setClickedLetters,
         setKeyboard('letter active')
         setStartGame(true)
         setWin(false)
-        setHangImage("assets/forca0.png")
+        setHangImage(forca0)
         setWrongPlays(0)
         setClickedLetters([])
         // if (win === true || wrongPlays === 6) {
@@ -29,7 +32,7 @@ export default function Jogo({ selectedWord, setSelectedWord, setClickedLetters,
             </div>
             <div className="words">
                 <button data-test="choose-word" onClick={selectWord} className="chooseWord" >Escolher Palavra</button>
-                <h1 data-test="word" data-answer={answer} className={`${pickedWord} ${hangImage === "assets/forca6.png" ? (win ? "green" : "red") : ""} ${win ? "green" : ""}`}>{underLine}</h1>
+                <h1 data-test="word" data-answer={answer} className={`${pickedWord} ${hangImage === forca6 ? (win ? "green" : "red") : ""} ${win ? "green" : ""}`}>{underLine}</h1>
             </div>
         </div>
         </>

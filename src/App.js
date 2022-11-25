@@ -3,6 +3,7 @@ import Chute from "./components/Chute";
 import Jogo from "./components/Jogo"
 import Letras from "./components/Letras"
 import palavras from "./palavras"
+import forca0 from "./assets/images/forca0.png"
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
   const [pickedWord, setPickedWord] = useState('word hidden')
   const [clickedLetters, setClickedLetters] = useState([])
   const [startGame, setStartGame] = useState(false)
-  const [hangImage, setHangImage] = useState("assets/forca0.png")
+  const [hangImage, setHangImage] = useState(forca0)
   const [wrongPlays, setWrongPlays] = useState(0)
   const [win, setWin] = useState(false)
   const [guess, setGuess] = useState("")

@@ -1,10 +1,50 @@
-export default function Letras({ selectedWord, setSelectedWord, clickedLetters, setClickedLetters, underLine, setUnderLine, wrongPlays, setWrongPlays, setHangImage, startGame, setStartGame, setWin, getRandomWord }) {
+import forca0 from "../assets/images/forca0.png"
+import forca1 from "../assets/images/forca1.png"
+import forca2 from "../assets/images/forca2.png"
+import forca3 from "../assets/images/forca3.png"
+import forca4 from "../assets/images/forca4.png"
+import forca5 from "../assets/images/forca5.png"
+import forca6 from "../assets/images/forca6.png"
+
+
+
+export default function Letras({ selectedWord, setSelectedWord, clickedLetters, setClickedLetters, underLine, setUnderLine, wrongPlays, setWrongPlays, setHangImage, startGame, setStartGame, setWin, getRandomWord, hangImage }) {
+    console.log(wrongPlays)
+
+    function changeImage() {
+        if (wrongPlays + 1 === 0) {
+            return forca0
+        }
+        if (wrongPlays + 1 === 1) {
+            return forca1
+        }
+        if (wrongPlays + 1 === 2) {
+            return forca2
+        }
+        if (wrongPlays + 1 === 3) {
+            return forca3
+        }
+        if (wrongPlays + 1 === 4) {
+            return forca4
+        }
+        if (wrongPlays + 1 === 5) {
+            return forca5
+        }
+        if (wrongPlays + 1 === 6) {
+            return forca6
+        }
+
+    }
+
+
+
+
 
     const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
     const choosenWord = Array.from(selectedWord)
     function clique(letter) {
-        
+
 
         const disabeLetters = [...clickedLetters, letter]
         setClickedLetters(disabeLetters)
@@ -36,7 +76,8 @@ export default function Letras({ selectedWord, setSelectedWord, clickedLetters, 
             const wrong = wrongPlays + 1
             setWrongPlays(wrong)
             console.log(wrong)
-            setHangImage(`assets/forca${wrong}.png`)
+            setHangImage(changeImage)
+            console.log(hangImage)
             if (wrong === 6) {
                 setStartGame(false)
                 setUnderLine(selectedWord)

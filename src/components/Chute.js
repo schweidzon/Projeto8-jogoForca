@@ -1,3 +1,5 @@
+import forca6 from "../assets/images/forca6.png"
+
 export default function Chute({startGame, setStartGame, selectedWord, setSelectedWord, setWin, setUnderLine, getRandomWord,hangImage,setHangImage, guess, setGuess }) {
     const choosenWord = selectedWord
 
@@ -13,7 +15,7 @@ export default function Chute({startGame, setStartGame, selectedWord, setSelecte
             setUnderLine(choosenWord)
             setWin(false)
             setSelectedWord(getRandomWord())
-            setHangImage(`assets/forca6.png`)
+            setHangImage(`${forca6}`)
             setGuess("")
         }   
     }
