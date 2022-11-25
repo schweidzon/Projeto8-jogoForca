@@ -32,8 +32,7 @@ function App() {
         setPickedWord={setPickedWord}       
         setClickedLetters={setClickedLetters}
         underLine={underLine}
-        setUnderLine={setUnderLine}  
-        startGame={startGame}      
+        setUnderLine={setUnderLine}              
         setStartGame={setStartGame}
         hangImage={hangImage}
         setHangImage={setHangImage}

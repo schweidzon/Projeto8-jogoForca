@@ -1,4 +1,4 @@
-export default function Jogo({ selectedWord, setClickedLetters, hangImage, setHangImage, pickedWord, setPickedWord, startGame, setStartGame, underLine, setUnderLine, win, setWin, wrongPlays, setWrongPlays, setKeyboard, answer, setAnswer }) {
+export default function Jogo({ selectedWord, setClickedLetters, hangImage, setHangImage, pickedWord, setPickedWord, setStartGame, underLine, setUnderLine, win, setWin, wrongPlays, setWrongPlays, setKeyboard, answer, setAnswer }) {
 
     console.log(selectedWord)
    
@@ -6,7 +6,6 @@ export default function Jogo({ selectedWord, setClickedLetters, hangImage, setHa
         const  choosenWord = Array.from(selectedWord)
         setAnswer(choosenWord.join(""))
         console.log(choosenWord)
-        console.log(underLine)
         const under = choosenWord.map((letra) => letra.replace(letra, " _ "))
         setUnderLine(under)
         setPickedWord('word')

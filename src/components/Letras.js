@@ -1,10 +1,11 @@
-export default function Letras({selectedWord, setSelectedWord, clickedLetters, setClickedLetters, underLine, setUnderLine, wrongPlays, setWrongPlays, setHangImage, startGame, setStartGame, setWin, getRandomWord}) {
-
-   
+export default function Letras({ selectedWord, setSelectedWord, clickedLetters, setClickedLetters, underLine, setUnderLine, wrongPlays, setWrongPlays, setHangImage, startGame, setStartGame, setWin, getRandomWord }) {
 
     const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
     const choosenWord = Array.from(selectedWord)
     function clique(letter) {
+        
+
         const disabeLetters = [...clickedLetters, letter]
         setClickedLetters(disabeLetters)
         if (choosenWord.includes(letter)) {
@@ -28,7 +29,9 @@ export default function Letras({selectedWord, setSelectedWord, clickedLetters, s
                     setUnderLine(mostrar)
                 }
 
+
             })
+
         } else {
             const wrong = wrongPlays + 1
             setWrongPlays(wrong)
@@ -61,4 +64,3 @@ export default function Letras({selectedWord, setSelectedWord, clickedLetters, s
         </div>
     )
 }
-
