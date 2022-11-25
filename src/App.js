@@ -21,7 +21,7 @@ function App() {
   const [guess, setGuess] = useState("")
   const [answer, setAnswer] = useState("")
 
-  console.log(hangImage)
+  
 
   return (
     <div>
@@ -33,7 +33,8 @@ function App() {
         setPickedWord={setPickedWord}       
         setClickedLetters={setClickedLetters}
         underLine={underLine}
-        setUnderLine={setUnderLine}              
+        setUnderLine={setUnderLine}     
+        startGame = {startGame}         
         setStartGame={setStartGame}
         hangImage={hangImage}
         setHangImage={setHangImage}
@@ -65,7 +66,6 @@ function App() {
 
       />
       <Chute
-
         startGame={startGame}
         setStartGame={setStartGame}
         selectedWord={selectedWord}
@@ -77,8 +77,6 @@ function App() {
         getRandomWord={getRandomWord}
         hangImage={hangImage}
         setHangImage={setHangImage}
-
-
         guess={guess}
         setGuess={setGuess}
 

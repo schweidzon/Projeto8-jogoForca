@@ -1,27 +1,25 @@
-export default function Jogo({ selectedWord, setSelectedWord, setClickedLetters, hangImage, setHangImage, pickedWord, setPickedWord, setStartGame, underLine, setUnderLine, win, setWin, wrongPlays, setWrongPlays, setKeyboard, answer, setAnswer,getRandomWord }) {
-
+export default function Jogo({ selectedWord, setSelectedWord, setClickedLetters, hangImage, setHangImage, pickedWord, setPickedWord, startGame, setStartGame, underLine, setUnderLine, win, setWin, wrongPlays, setWrongPlays, setKeyboard, answer, setAnswer, getRandomWord }) {
     console.log(selectedWord)
-   
     function selectWord() {
-        setSelectedWord(getRandomWord())
-        const  choosenWord = Array.from(selectedWord)
-        setAnswer(choosenWord.join(""))
-        console.log(choosenWord)
+        const choosenWord = Array.from(selectedWord)
         const under = choosenWord.map((letra) => letra.replace(letra, " _ "))
+        setAnswer(choosenWord.join(""))
         setUnderLine(under)
         setPickedWord('word')
         setKeyboard('letter active')
         setStartGame(true)
         setWin(false)
         setHangImage("assets/forca0.png")
-        if (win === true || wrongPlays === 6) {
-            setKeyboard('letter active')
-            setClickedLetters([])
-            setStartGame(true)
-            setWin(false)
-            setStartGame(true)
-            setWrongPlays(0)
-        }
+        setWrongPlays(0)
+        setClickedLetters([])
+        // if (win === true || wrongPlays === 6) {
+        //     setKeyboard('letter active')
+        //     
+        //     setStartGame(true)
+        //     setWin(false)
+        //     setStartGame(true)
+
+        // }
     }
 
     return (

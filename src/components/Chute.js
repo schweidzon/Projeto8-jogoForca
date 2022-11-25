@@ -14,7 +14,6 @@ export default function Chute({startGame, setStartGame, selectedWord, setSelecte
             setWin(false)
             setSelectedWord(getRandomWord())
             setHangImage(`assets/forca6.png`)
-            console.log(hangImage)
             setGuess("")
         }   
     }
@@ -24,7 +23,7 @@ export default function Chute({startGame, setStartGame, selectedWord, setSelecte
             <div className="shot">
                 <h4>Já sei a palavra!</h4>
                 <input data-test="guess-input" value={guess} onChange={(e) => setGuess(e.target.value)} disabled = {startGame ?  false : true}/>
-                <button data-test="guess-button" onClick={chutar} disabled = {startGame ?  false : true} className={startGame ? "" : "desactive"} >Chutar</button>
+                <button data-test="guess-button" onClick={chutar} disabled = {startGame ?  false : true} className={startGame ? "active" : "desactive"} >Chutar</button>
             </div>
 
         </>
