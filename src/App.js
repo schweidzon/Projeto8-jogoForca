@@ -19,6 +19,7 @@ function App() {
   const [wrongPlays, setWrongPlays] = useState(0)
   const [win, setWin] = useState(false)
   const [guess, setGuess] = useState("")
+  const [answer, setAnswer] = useState("")
 
   console.log(hangImage)
 
@@ -40,6 +41,8 @@ function App() {
         setWrongPlays={setWrongPlays}
         win={win}
         setWin={setWin}
+        answer={answer}
+        setAnswer={setAnswer}
         
       />
       <Letras

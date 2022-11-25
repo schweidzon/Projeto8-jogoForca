@@ -1,9 +1,10 @@
-export default function Jogo({ selectedWord, setClickedLetters, hangImage, setHangImage, pickedWord, setPickedWord, startGame, setStartGame, underLine, setUnderLine, win, setWin, wrongPlays, setWrongPlays, setKeyboard }) {
+export default function Jogo({ selectedWord, setClickedLetters, hangImage, setHangImage, pickedWord, setPickedWord, startGame, setStartGame, underLine, setUnderLine, win, setWin, wrongPlays, setWrongPlays, setKeyboard, answer, setAnswer }) {
 
     console.log(selectedWord)
-    let choosenWord;
+   
     function selectWord() {
-        choosenWord = Array.from(selectedWord)
+        const  choosenWord = Array.from(selectedWord)
+        setAnswer(choosenWord.join(""))
         console.log(choosenWord)
         console.log(underLine)
         const under = choosenWord.map((letra) => letra.replace(letra, " _ "))
@@ -30,7 +31,7 @@ export default function Jogo({ selectedWord, setClickedLetters, hangImage, setHa
             </div>
             <div className="words">
                 <button data-test="choose-word" onClick={selectWord} className="chooseWord" >Escolher Palavra</button>
-                <h1 data-test="word" data-answer={startGame ? choosenWord : ""} className={`${pickedWord} ${hangImage === "assets/forca6.png" ? (win ? "green" : "red") : ""} ${win ? "green" : ""}`}>{underLine}</h1>
+                <h1 data-test="word" data-answer={answer} className={`${pickedWord} ${hangImage === "assets/forca6.png" ? (win ? "green" : "red") : ""} ${win ? "green" : ""}`}>{underLine}</h1>
             </div>
         </div>
         </>
