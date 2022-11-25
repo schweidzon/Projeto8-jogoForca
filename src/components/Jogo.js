@@ -36,11 +36,11 @@ export default function Jogo(props) {
     return (
         <>  <div className="game">
             <div className="hangman">
-                <img src={props.hangImage} alt="hangman" />
+                <img data-test="game-image" src={props.hangImage} alt="hangman" />
             </div>
             <div className="words">
-                <button onClick={selectWord} className="chooseWord" >Escolher Palavra</button>
-                <h1 className={`${props.pickedWord} ${props.hangImage === "assets/forca6.png" ? (props.win ? "green" : "red") : ""} ${props.win ? "green" : ""}`}>{props.underLine}</h1>
+                <button data-test="choose-word" onClick={selectWord} className="chooseWord" >Escolher Palavra</button>
+                <h1 data-test="word" data-answer={props.selectedWord} className={`${props.pickedWord} ${props.hangImage === "assets/forca6.png" ? (props.win ? "green" : "red") : ""} ${props.win ? "green" : ""}`}>{props.underLine}</h1>
             </div>
         </div>
         </>

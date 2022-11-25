@@ -62,7 +62,7 @@ export default function Letras(props) {
     return (
         <div className="letters">
             {alfabeto.map(letra =>
-                <button disabled={props.startGame ? (props.clickedLetters.includes(letra) ? true : false) : true} onClick={() => clique(letra)} className={`letter ${props.startGame ? "active" : ""} ${props.clickedLetters.includes(letra) ? "desactive" : ""}`}>
+                <button data-test="letter" disabled={props.startGame ? (props.clickedLetters.includes(letra) ? true : false) : true} onClick={() => clique(letra)} className={`letter ${props.startGame ? "active" : ""} ${props.clickedLetters.includes(letra) ? "desactive" : ""}`}>
                     {letra.toUpperCase()}
                 </button>
             )}

@@ -23,8 +23,8 @@ export default function Chute(props) {
         <>
             <div className="shot">
                 <h4>Já sei a palavra!</h4>
-                <input value={chute} onChange={(e) => setChute(e.target.value)} disabled = {startGame ?  false : true}/>
-                <button onClick={chutar} disabled = {startGame ?  false : true} className={startGame ? "" : "desactive"} >Chutar</button>
+                <input data-test="guess-input" value={chute} onChange={(e) => setChute(e.target.value)} disabled = {startGame ?  false : true}/>
+                <button data-test="guess-button" onClick={chutar} disabled = {startGame ?  false : true} className={startGame ? "" : "desactive"} >Chutar</button>
             </div>
 
         </>
