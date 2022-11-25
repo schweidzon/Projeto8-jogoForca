@@ -1,8 +1,9 @@
-export default function Jogo({ selectedWord, setClickedLetters, hangImage, setHangImage, pickedWord, setPickedWord, setStartGame, underLine, setUnderLine, win, setWin, wrongPlays, setWrongPlays, setKeyboard, answer, setAnswer }) {
+export default function Jogo({ selectedWord, setSelectedWord, setClickedLetters, hangImage, setHangImage, pickedWord, setPickedWord, setStartGame, underLine, setUnderLine, win, setWin, wrongPlays, setWrongPlays, setKeyboard, answer, setAnswer,getRandomWord }) {
 
     console.log(selectedWord)
    
     function selectWord() {
+        setSelectedWord(getRandomWord())
         const  choosenWord = Array.from(selectedWord)
         setAnswer(choosenWord.join(""))
         console.log(choosenWord)

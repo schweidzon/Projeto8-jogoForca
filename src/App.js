@@ -27,6 +27,7 @@ function App() {
     <div>
       <Jogo
         selectedWord={selectedWord}
+        setSelectedWord={setSelectedWord}
         setKeyboard={setKeyboard}
         pickedWord={pickedWord}
         setPickedWord={setPickedWord}       
@@ -42,6 +43,7 @@ function App() {
         setWin={setWin}
         answer={answer}
         setAnswer={setAnswer}
+        getRandomWord={getRandomWord}
         
       />
       <Letras
