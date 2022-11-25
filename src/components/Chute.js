@@ -1,13 +1,13 @@
-export default function Chute(props) {
-    const {startGame, setStartGame, selectedWord, setSelectedWord, setWin, setUnderLine, getRandomWord,hangImage,setHangImage, chute, setChute } = props
+export default function Chute({startGame, setStartGame, selectedWord, setSelectedWord, setWin, setUnderLine, getRandomWord,hangImage,setHangImage, guess, setGuess }) {
+    
 
     function chutar() {
-        if(chute === selectedWord) {
+        if(guess === selectedWord) {
             setWin(true)
             setStartGame(false)
             setUnderLine(selectedWord)
             setSelectedWord(getRandomWord())
-            setChute("")
+            setGuess("")
         } else {
             setStartGame(false)
             setUnderLine(selectedWord)
@@ -15,7 +15,7 @@ export default function Chute(props) {
             setSelectedWord(getRandomWord())
             setHangImage(`assets/forca6.png`)
             console.log(hangImage)
-            setChute("")
+            setGuess("")
         }   
     }
     
@@ -23,7 +23,7 @@ export default function Chute(props) {
         <>
             <div className="shot">
                 <h4>Já sei a palavra!</h4>
-                <input data-test="guess-input" value={chute} onChange={(e) => setChute(e.target.value)} disabled = {startGame ?  false : true}/>
+                <input data-test="guess-input" value={guess} onChange={(e) => setGuess(e.target.value)} disabled = {startGame ?  false : true}/>
                 <button data-test="guess-button" onClick={chutar} disabled = {startGame ?  false : true} className={startGame ? "" : "desactive"} >Chutar</button>
             </div>
 

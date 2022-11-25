@@ -1,46 +1,35 @@
-//import { useState } from "react";
+export default function Jogo({ selectedWord, setClickedLetters, hangImage, setHangImage, pickedWord, setPickedWord, setStartGame, underLine, setUnderLine, win, setWin, wrongPlays, setWrongPlays, setKeyboard }) {
 
-export default function Jogo(props) {
-    let selectedWord = Array.from(props.selectedWord)
+    let choosenWord = Array.from(selectedWord)
     console.log(selectedWord)
 
-    function selectWord() {        
-     
-       console.log(props.underLine)
-       const under = selectedWord.map((letra) => letra.replace(letra, " _ "))
-        props.setUnderLine(under)
-        props.setPickedWord('word')
-        props.setKeyboard('letter active')
-        props.setStartGame(true)
-        props.setWin(false)
-        props.setHangImage("assets/forca0.png")
-        if(props.win===true || props.wrongPlays===6) {
-            props.setKeyboard('letter active')
-            props.setClickedLetters([])
-            props.setStartGame(true)
-            props.setWin(false)
-            props.setStartGame(true)
-            props.setWrongPlays(0)
+    function selectWord() {
+        console.log(underLine)
+        const under = choosenWord.map((letra) => letra.replace(letra, " _ "))
+        setUnderLine(under)
+        setPickedWord('word')
+        setKeyboard('letter active')
+        setStartGame(true)
+        setWin(false)
+        setHangImage("assets/forca0.png")
+        if (win === true || wrongPlays === 6) {
+            setKeyboard('letter active')
+            setClickedLetters([])
+            setStartGame(true)
+            setWin(false)
+            setStartGame(true)
+            setWrongPlays(0)
         }
     }
-
-   
-
-
- 
-
-
-   
-
 
     return (
         <>  <div className="game">
             <div className="hangman">
-                <img data-test="game-image" src={props.hangImage} alt="hangman" />
+                <img data-test="game-image" src={hangImage} alt="hangman" />
             </div>
             <div className="words">
                 <button data-test="choose-word" onClick={selectWord} className="chooseWord" >Escolher Palavra</button>
-                <h1 data-test="word" data-answer={props.selectedWord} className={`${props.pickedWord} ${props.hangImage === "assets/forca6.png" ? (props.win ? "green" : "red") : ""} ${props.win ? "green" : ""}`}>{props.underLine}</h1>
+                <h1 data-test="word" data-answer={selectedWord} className={`${pickedWord} ${hangImage === "assets/forca6.png" ? (win ? "green" : "red") : ""} ${win ? "green" : ""}`}>{underLine}</h1>
             </div>
         </div>
         </>

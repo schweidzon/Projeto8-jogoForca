@@ -13,32 +13,25 @@ function App() {
   const [underLine, setUnderLine] = useState([])
   const [keyboard, setKeyboard] = useState('letter')
   const [pickedWord, setPickedWord] = useState('word hidden')
-  
   const [clickedLetters, setClickedLetters] = useState([])
   const [startGame, setStartGame] = useState(false)
-
   const [hangImage, setHangImage] = useState("assets/forca0.png")
   const [wrongPlays, setWrongPlays] = useState(0)
   const [win, setWin] = useState(false)
-  const [chute, setChute] = useState("")
-  
+  const [guess, setGuess] = useState("")
+
   console.log(hangImage)
 
   return (
     <div>
-      <Jogo words={palavras}
+      <Jogo
         selectedWord={selectedWord}
-        setSelectedWord={setSelectedWord}
-        getRandomWord={getRandomWord}
         setKeyboard={setKeyboard}
         pickedWord={pickedWord}
-        setPickedWord={setPickedWord}
-       
-        clickedLetters={clickedLetters}
+        setPickedWord={setPickedWord}       
         setClickedLetters={setClickedLetters}
         underLine={underLine}
-        setUnderLine={setUnderLine}
-        startGame={startGame}
+        setUnderLine={setUnderLine}        
         setStartGame={setStartGame}
         hangImage={hangImage}
         setHangImage={setHangImage}
@@ -48,7 +41,8 @@ function App() {
         setWin={setWin}
         
       />
-      <Letras keyboard={keyboard}
+      <Letras
+        keyboard={keyboard}
         setKeyboard={setKeyboard}
         selectedWord={selectedWord}
         setSelectedWord={setSelectedWord}
@@ -58,17 +52,15 @@ function App() {
         underLine={underLine}
         setUnderLine={setUnderLine}
         startGame={startGame}
-        setStartGame={setStartGame}
-        hangImage={hangImage}
+        setStartGame={setStartGame}        
         setHangImage={setHangImage}
         wrongPlays={wrongPlays}
-        setWrongPlays={setWrongPlays}
-        win={win}
+        setWrongPlays={setWrongPlays}        
         setWin={setWin}
-        
-        />
+
+      />
       <Chute
-       
+
         startGame={startGame}
         setStartGame={setStartGame}
         selectedWord={selectedWord}
@@ -80,11 +72,11 @@ function App() {
         getRandomWord={getRandomWord}
         hangImage={hangImage}
         setHangImage={setHangImage}
-        
-       
-        chute={chute}
-        setChute={setChute}
-        
+
+
+        guess={guess}
+        setGuess={setGuess}
+
       />
     </div>
   );

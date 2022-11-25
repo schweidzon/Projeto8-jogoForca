@@ -1,19 +1,13 @@
-export default function Letras(props) {
+export default function Letras({selectedWord, setSelectedWord, clickedLetters, setClickedLetters, underLine, setUnderLine, wrongPlays, setWrongPlays, setHangImage, startGame, setStartGame, setWin, getRandomWord}) {
 
+   
 
     const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-
-    const selectedWord = Array.from(props.selectedWord)
-
-
-
+    const choosenWord = Array.from(selectedWord)
     function clique(letter) {
-        const disabeLetters = [...props.clickedLetters, letter]
-        props.setClickedLetters(disabeLetters)
-        console.log(disabeLetters)
-
-
-        if (selectedWord.includes(letter)) {
+        const disabeLetters = [...clickedLetters, letter]
+        setClickedLetters(disabeLetters)
+        if (choosenWord.includes(letter)) {
 
             //Iterar no array da palavra e verificar
             // se a letra do array selectedWord === letra clicada
@@ -27,42 +21,39 @@ export default function Letras(props) {
             //seta o mostrar para (_, a, _, a) e compara se a letra clicada tem na palavra selectedWord (o V tem no indice 0)
             //pega o mostrar no indice que a letra coindiciu (0) e muda para a letra
             //mostrar agora é (v, a, _, a) => seta o underline pra mostrar na tela.
-            selectedWord.forEach((l, i) => {
+            choosenWord.forEach((l, i) => {
                 if (l === letter) {
-                    let mostrar = props.underLine
+                    let mostrar = underLine
                     mostrar[i] = letter
-                    props.setUnderLine(mostrar)
+                    setUnderLine(mostrar)
                 }
 
             })
         } else {
-            const wrong = props.wrongPlays + 1
-            props.setWrongPlays(wrong)
+            const wrong = wrongPlays + 1
+            setWrongPlays(wrong)
             console.log(wrong)
-            props.setHangImage(`assets/forca${wrong}.png`)
+            setHangImage(`assets/forca${wrong}.png`)
             if (wrong === 6) {
-                props.setStartGame(false)
-                props.setUnderLine(selectedWord)
-                props.setWin(false)
-                props.setSelectedWord(props.getRandomWord())
+                setStartGame(false)
+                setUnderLine(selectedWord)
+                setWin(false)
+                setSelectedWord(getRandomWord())
             }
         }
 
-        if (selectedWord.every(item => disabeLetters.includes(item))) {
-            props.setWin(true)
-            props.setStartGame(false)
-            props.setUnderLine(selectedWord)
-            props.setSelectedWord(props.getRandomWord())
+        if (choosenWord.every(item => disabeLetters.includes(item))) {
+            setWin(true)
+            setStartGame(false)
+            setUnderLine(selectedWord)
+            setSelectedWord(getRandomWord())
         }
-
-
-
     }
 
     return (
         <div className="letters">
             {alfabeto.map(letra =>
-                <button data-test="letter" disabled={props.startGame ? (props.clickedLetters.includes(letra) ? true : false) : true} onClick={() => clique(letra)} className={`letter ${props.startGame ? "active" : ""} ${props.clickedLetters.includes(letra) ? "desactive" : ""}`}>
+                <button data-test="letter" disabled={startGame ? (clickedLetters.includes(letra) ? true : false) : true} onClick={() => clique(letra)} className={`letter ${startGame ? "active" : ""} ${clickedLetters.includes(letra) ? "desactive" : ""}`}>
                     {letra.toUpperCase()}
                 </button>
             )}
