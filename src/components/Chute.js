@@ -1,16 +1,16 @@
 export default function Chute({startGame, setStartGame, selectedWord, setSelectedWord, setWin, setUnderLine, getRandomWord,hangImage,setHangImage, guess, setGuess }) {
-    
+    const choosenWord = selectedWord
 
     function chutar() {
         if(guess === selectedWord) {
             setWin(true)
             setStartGame(false)
-            setUnderLine(selectedWord)
+            setUnderLine(choosenWord)
             setSelectedWord(getRandomWord())
             setGuess("")
         } else {
             setStartGame(false)
-            setUnderLine(selectedWord)
+            setUnderLine(choosenWord)
             setWin(false)
             setSelectedWord(getRandomWord())
             setHangImage(`assets/forca6.png`)
