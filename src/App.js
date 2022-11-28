@@ -10,7 +10,13 @@ function App() {
   function getRandomWord() {
     return palavras[Math.floor(Math.random() * (palavras).length)]
   }
-  const [selectedWord, setSelectedWord] = useState(getRandomWord())
+
+ 
+
+
+
+
+  const [selectedWord, setSelectedWord] = useState("")
   const [underLine, setUnderLine] = useState([])
   const [keyboard, setKeyboard] = useState('letter')
   const [pickedWord, setPickedWord] = useState('word hidden')
@@ -20,9 +26,6 @@ function App() {
   const [wrongPlays, setWrongPlays] = useState(0)
   const [win, setWin] = useState(false)
   const [guess, setGuess] = useState("")
-  const [answer, setAnswer] = useState("")
-
-  
 
   return (
     <div>
@@ -31,22 +34,19 @@ function App() {
         setSelectedWord={setSelectedWord}
         setKeyboard={setKeyboard}
         pickedWord={pickedWord}
-        setPickedWord={setPickedWord}       
+        setPickedWord={setPickedWord}
         setClickedLetters={setClickedLetters}
         underLine={underLine}
-        setUnderLine={setUnderLine}     
-        startGame = {startGame}         
+        setUnderLine={setUnderLine}        
         setStartGame={setStartGame}
         hangImage={hangImage}
-        setHangImage={setHangImage}
-        wrongPlays={wrongPlays}
+        setHangImage={setHangImage}        
         setWrongPlays={setWrongPlays}
         win={win}
         setWin={setWin}
-        answer={answer}
-        setAnswer={setAnswer}
         getRandomWord={getRandomWord}
-        
+      
+
       />
       <Letras
         keyboard={keyboard}
@@ -59,10 +59,10 @@ function App() {
         underLine={underLine}
         setUnderLine={setUnderLine}
         startGame={startGame}
-        setStartGame={setStartGame}        
+        setStartGame={setStartGame}
         setHangImage={setHangImage}
         wrongPlays={wrongPlays}
-        setWrongPlays={setWrongPlays}        
+        setWrongPlays={setWrongPlays}
         setWin={setWin}
 
       />
