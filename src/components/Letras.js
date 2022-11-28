@@ -5,6 +5,7 @@ import forca3 from "../assets/images/forca3.png"
 import forca4 from "../assets/images/forca4.png"
 import forca5 from "../assets/images/forca5.png"
 import forca6 from "../assets/images/forca6.png"
+import styled from "styled-components"
 
 
 
@@ -90,13 +91,25 @@ export default function Letras({ selectedWord, setSelectedWord, clickedLetters, 
     }
 
     return (
-        <div className="letters">
+        <Letters>
             {alfabeto.map(letra =>
                 <button data-test="letter" disabled={startGame ? (clickedLetters.includes(letra) ? true : false) : true} onClick={() => click(letra)} className={`letter ${startGame ? "active" : ""} ${clickedLetters.includes(letra) ? "desactive" : ""}`}>
                     {letra.toUpperCase()}
                 </button>
             )}
 
-        </div>
+        </Letters>
     )
 }
+
+const Letters = styled.div`
+   display: flex;
+    gap: 10px;
+    width: fit-content;
+    margin: auto;
+    width: 664px;
+    flex-wrap: wrap;
+    margin-top: 70px;
+`
+
+

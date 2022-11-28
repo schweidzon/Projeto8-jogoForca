@@ -1,3 +1,12 @@
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -30,6 +39,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+    font-family: 'Roboto', sans-serif;
 }
 ol, ul {
 	list-style: none;
@@ -46,3 +56,6 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+`
+
+export default GlobalStyle

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import GlobalStyle from "./style/globalStyle";
 import Chute from "./components/Chute";
 import Jogo from "./components/Jogo"
 import Letras from "./components/Letras"
@@ -11,7 +12,7 @@ function App() {
     return palavras[Math.floor(Math.random() * (palavras).length)]
   }
 
- 
+
 
 
 
@@ -34,62 +35,65 @@ function App() {
 
 
   return (
-    <div>
-      <Jogo
-        selectedWord={selectedWord}
-        setSelectedWord={setSelectedWord}
-        setKeyboard={setKeyboard}
-        pickedWord={pickedWord}
-        setPickedWord={setPickedWord}
-        setClickedLetters={setClickedLetters}
-        underLine={underLine}
-        setUnderLine={setUnderLine}        
-        setStartGame={setStartGame}
-        hangImage={hangImage}
-        setHangImage={setHangImage}        
-        setWrongPlays={setWrongPlays}
-        win={win}
-        setWin={setWin}
-        answer={answer}
-        setAnswer={setAnswer}
-        getRandomWord={getRandomWord}    
+    <>
+      <GlobalStyle />
+      <div>
+        <Jogo
+          selectedWord={selectedWord}
+          setSelectedWord={setSelectedWord}
+          setKeyboard={setKeyboard}
+          pickedWord={pickedWord}
+          setPickedWord={setPickedWord}
+          setClickedLetters={setClickedLetters}
+          underLine={underLine}
+          setUnderLine={setUnderLine}
+          setStartGame={setStartGame}
+          hangImage={hangImage}
+          setHangImage={setHangImage}
+          setWrongPlays={setWrongPlays}
+          win={win}
+          setWin={setWin}
+          answer={answer}
+          setAnswer={setAnswer}
+          getRandomWord={getRandomWord}
 
-      />
-      <Letras
-        keyboard={keyboard}
-        setKeyboard={setKeyboard}
-        selectedWord={selectedWord}
-        setSelectedWord={setSelectedWord}
-        getRandomWord={getRandomWord}
-        clickedLetters={clickedLetters}
-        setClickedLetters={setClickedLetters}
-        underLine={underLine}
-        setUnderLine={setUnderLine}
-        startGame={startGame}
-        setStartGame={setStartGame}
-        setHangImage={setHangImage}
-        wrongPlays={wrongPlays}
-        setWrongPlays={setWrongPlays}
-        setWin={setWin}
+        />
+        <Letras
+          keyboard={keyboard}
+          setKeyboard={setKeyboard}
+          selectedWord={selectedWord}
+          setSelectedWord={setSelectedWord}
+          getRandomWord={getRandomWord}
+          clickedLetters={clickedLetters}
+          setClickedLetters={setClickedLetters}
+          underLine={underLine}
+          setUnderLine={setUnderLine}
+          startGame={startGame}
+          setStartGame={setStartGame}
+          setHangImage={setHangImage}
+          wrongPlays={wrongPlays}
+          setWrongPlays={setWrongPlays}
+          setWin={setWin}
 
-      />
-      <Chute
-        startGame={startGame}
-        setStartGame={setStartGame}
-        selectedWord={selectedWord}
-        setSelectedWord={setSelectedWord}
-        win={win}
-        setWin={setWin}
-        underLine={underLine}
-        setUnderLine={setUnderLine}
-        getRandomWord={getRandomWord}
-        hangImage={hangImage}
-        setHangImage={setHangImage}
-        guess={guess}
-        setGuess={setGuess}
+        />
+        <Chute
+          startGame={startGame}
+          setStartGame={setStartGame}
+          selectedWord={selectedWord}
+          setSelectedWord={setSelectedWord}
+          win={win}
+          setWin={setWin}
+          underLine={underLine}
+          setUnderLine={setUnderLine}
+          getRandomWord={getRandomWord}
+          hangImage={hangImage}
+          setHangImage={setHangImage}
+          guess={guess}
+          setGuess={setGuess}
 
-      />
-    </div>
+        />
+      </div>
+    </>
   );
 }
 
