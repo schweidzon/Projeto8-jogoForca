@@ -1,7 +1,7 @@
 import forca0 from "../assets/images/forca0.png"
 import forca6 from "../assets/images/forca6.png"
 
-export default function Jogo({ selectedWord, setSelectedWord, setClickedLetters, hangImage, setHangImage, pickedWord, setPickedWord, setStartGame, underLine, setUnderLine, win, setWin, setWrongPlays, setKeyboard, setAnswer, getRandomWord }) {
+export default function Jogo({ selectedWord, answer, setSelectedWord, setClickedLetters, hangImage, setHangImage, pickedWord, setPickedWord, setStartGame, underLine, setUnderLine, win, setWin, setWrongPlays, setKeyboard, setAnswer, getRandomWord }) {
     console.log(selectedWord, )
       
   function selectWord() {

@@ -35,15 +35,10 @@ export default function Letras({ selectedWord, setSelectedWord, clickedLetters, 
         }
 
     }
-
-
-
-
-
     const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
     const choosenWord = Array.from(selectedWord)
-    function clique(letter) {
+    function click(letter) {
 
 
         const disabeLetters = [...clickedLetters, letter]
@@ -97,7 +92,7 @@ export default function Letras({ selectedWord, setSelectedWord, clickedLetters, 
     return (
         <div className="letters">
             {alfabeto.map(letra =>
-                <button data-test="letter" disabled={startGame ? (clickedLetters.includes(letra) ? true : false) : true} onClick={() => clique(letra)} className={`letter ${startGame ? "active" : ""} ${clickedLetters.includes(letra) ? "desactive" : ""}`}>
+                <button data-test="letter" disabled={startGame ? (clickedLetters.includes(letra) ? true : false) : true} onClick={() => click(letra)} className={`letter ${startGame ? "active" : ""} ${clickedLetters.includes(letra) ? "desactive" : ""}`}>
                     {letra.toUpperCase()}
                 </button>
             )}
