@@ -26,6 +26,12 @@ function App() {
   const [wrongPlays, setWrongPlays] = useState(0)
   const [win, setWin] = useState(false)
   const [guess, setGuess] = useState("")
+  const [answer, setAnswer] = useState("")
+
+
+
+
+
 
   return (
     <div>
@@ -44,8 +50,9 @@ function App() {
         setWrongPlays={setWrongPlays}
         win={win}
         setWin={setWin}
-        getRandomWord={getRandomWord}
-      
+        answer={answer}
+        setAnswer={setAnswer}
+        getRandomWord={getRandomWord}    
 
       />
       <Letras

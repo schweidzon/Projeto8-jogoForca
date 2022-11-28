@@ -1,13 +1,14 @@
 import forca0 from "../assets/images/forca0.png"
 import forca6 from "../assets/images/forca6.png"
 
-export default function Jogo({ selectedWord, setSelectedWord, setClickedLetters, hangImage, setHangImage, pickedWord, setPickedWord, setStartGame, underLine, setUnderLine, win, setWin, setWrongPlays, setKeyboard, getRandomWord }) {
+export default function Jogo({ selectedWord, setSelectedWord, setClickedLetters, hangImage, setHangImage, pickedWord, setPickedWord, setStartGame, underLine, setUnderLine, win, setWin, setWrongPlays, setKeyboard, setAnswer, getRandomWord }) {
     console.log(selectedWord, )
       
   function selectWord() {
     const choosenWord = Array.from(getRandomWord())
     setSelectedWord(choosenWord.join(""))
     const under = choosenWord.map((letra) => letra.replace(letra, " _ "))
+    setAnswer(choosenWord.join(""))
     setUnderLine(under)
     setPickedWord('word')
     setKeyboard('letter active')
@@ -26,7 +27,7 @@ export default function Jogo({ selectedWord, setSelectedWord, setClickedLetters,
             </div>
             <div className="words">
                 <button data-test="choose-word" onClick={selectWord} className="chooseWord" >Escolher Palavra</button>
-                <h1 data-test="word" data-answer={selectedWord} className={`${pickedWord} ${hangImage === forca6 ? (win ? "green" : "red") : ""} ${win ? "green" : ""}`}>{underLine}</h1>
+                <h1 data-test="word" data-answer={answer} className={`${pickedWord} ${hangImage === forca6 ? (win ? "green" : "red") : ""} ${win ? "green" : ""}`}>{underLine}</h1>
             </div>
         </div>
         </>
